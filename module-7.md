@@ -9,6 +9,7 @@
   - has an extensive collection of built-in code that can be imported to perform tasks
     
 #Python Script
+
 -#- hash symbol indicates a comment - the programmer is describing their intention behind the code
     - common practice to start with a comment
   "# Print Hello Python"     ----- don't use quotes
