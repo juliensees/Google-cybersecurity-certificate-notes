@@ -12,8 +12,10 @@
 
 -#- hash symbol indicates a comment - the programmer is describing their intention behind the code
     - common practice to start with a comment
+    
   "# Print Hello Python"     ----- don't use quotes
    print ("Hello Python!")
+   
     - print () -- outputs a specified object to the screen. so the initial hash (#) comment says what you want to do with the code, and the code below signifies the code to do that.
       
 - Syntax - refers to the rules of the correct structure of programming language
