@@ -30,11 +30,11 @@
 #Core Python components
 
   #Data type - a category for a particular type of data item
-    # String data - data consisting of an ordered sequence of characters (must be placed within quotations or apostrophes!!)
-    # Numeric data - does NOT use quotation marks
-      ## Float data - consists of a number with a decimal point (whole numbers also get a decimal -- 2.0)                                 - / symbol is a divide, but // divides and returns as rounding down to the nearest whole number 
-      ## Integer data - consists of a number without a decimal point
-    # Boolean data - can only be one of two values (true or false)
-    # List data - data structure that consists of a collection of data in sequential form
+   - String data - data consisting of an ordered sequence of characters (must be placed within quotations or apostrophes!!)
+   - Numeric data - does NOT use quotation marks
+       - Float data - consists of a number with a decimal point (whole numbers also get a decimal -- 2.0)                                 - / symbol is a divide, but // divides and returns as rounding down to the nearest whole number 
+       - Integer data - consists of a number without a decimal point
+   - Boolean data - can only be one of two values (true or false)
+   - List data - data structure that consists of a collection of data in sequential form
         - entirety of list must be placed within brackets [ ]  , and separated by commas, -ex. print (["estrada", "zamboni"])
       
