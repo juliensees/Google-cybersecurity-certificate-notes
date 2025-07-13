@@ -134,4 +134,15 @@ The above scenario shows that things will recall within the order they were inpu
          print("check status")
 
         - in above statement, the "not" operator inverts whether conditions are met in order to print. so if both things are                 not met, then it will PRINT.
-        - MUST USE PARENTHESES AFTER "NOT", SO THAT BOTH ASPECTS ARE INCLUDED!  
+        - MUST USE PARENTHESES AFTER "NOT", SO THAT BOTH ASPECTS ARE INCLUDED!
+
+   - BELOW, uses the "in" operator, after creating a list:
+   
+       approved_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
+
+        username = "bmoreno"
+
+        if username in approved_list:
+          print("access approved")
+        else:
+          print("access denied")
