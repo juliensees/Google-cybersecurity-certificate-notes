@@ -138,7 +138,7 @@ The above scenario shows that things will recall within the order they were inpu
         - MUST USE PARENTHESES AFTER "NOT", SO THAT BOTH ASPECTS ARE INCLUDED!
 
    - BELOW, uses the "in" operator, after creating a list:
-      - the "in" operator tells python to run the loop for every item int he sequence.
+      - the "in" operator tells python to run the loop for every item in the sequence.
 
   - 
         approved_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
@@ -159,13 +159,19 @@ The above scenario shows that things will recall within the order they were inpu
         - "i" is the loop variable, which controls the iterations of a loop
         - "in" is the operator; which tells python to run the loop for every item
         - must be a colon at the end of the header
--
-        for i in [1,2,3,4]:  
-          print (i)  
 
-  - "range" function - generates a sequence of numbers. 
+-
+        for i in [1,2,3,4]:    
+          print (i)    
+
+ - "range" function - generates a sequence of numbers. 
     range(0, 10) - will include 0-9... always includes first number, and then last number is when to stop  
-      - if you don't provide a "start point", it will start at 0... so range(10), is the same as above  
+      - if you don't provide a "start point", it will start at 0... so range(10), is the same as above
+-
+      for i in range(0, 5, 1):
+        print(i)  
+
+  in above loop, it prints 0-4 because the second number is the end point (which is not included), and then the 3rd number.            determines the incremental change (in this case, it increases by an integer of 1)
 
       ### While Loops
    
