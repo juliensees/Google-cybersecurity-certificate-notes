@@ -85,7 +85,8 @@ The above scenario shows that things will recall within the order they were inpu
 
 # Conditional and Iterative Statements 
 
-  - Conditional Statement - a statement that evaluates code to determine if it meets a specified set of conditions
+  ## Conditional Statement
+      - a statement that evaluates code to determine if it meets a specified set of conditions
   - "if" - starts a conditional statement and the first line of the header is always ENDED BY A COLON!!
   -
         if failed_attempts > 5:  
@@ -137,8 +138,10 @@ The above scenario shows that things will recall within the order they were inpu
         - MUST USE PARENTHESES AFTER "NOT", SO THAT BOTH ASPECTS ARE INCLUDED!
 
    - BELOW, uses the "in" operator, after creating a list:
-   
-       approved_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
+      - the "in" operator tells python to run the loop for every item int he sequence.
+
+  - 
+        approved_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
 
         username = "bmoreno"
 
@@ -146,3 +149,52 @@ The above scenario shows that things will recall within the order they were inpu
           print("access approved")
         else:
           print("access denied")
+
+  ## Iterative Statement
+    - a statement that repeatedly executes a set of instructions (loops)
+     
+      ### For Loops
+        - begin with "for" (signals the beginning of the loop)
+        - header is with the "for" keyword, body
+        - "i" is the loop variable, which controls the iterations of a loop
+        - "in" is the operator; which tells python to run the loop for every item
+        - must be a colon at the end of the header
+-
+        for i in [1,2,3,4]:  
+          print (i)  
+
+  - "range" function - generates a sequence of numbers. 
+    range(0, 10) - will include 0-9... always includes first number, and then last number is when to stop  
+      - if you don't provide a "start point", it will start at 0... so range(10), is the same as above  
+
+      ### While Loops
+   
+    - repeatedly execute a function, but the repetition is based on a condition you create before. 
+    - "while" indicates the beginning, followed by the condition, that contains the loop variable,
+             in this case "time"
+             - so you assign the variable beforehand, and then reference in the loop. 
+      
+    - so in the below statement, time = 0 is the variable, and then underneath is the condition using it
+      - in the indented body, it consists of the actions to take while the loop iterates
+      - so the first line prints the current variable (0), and then print every two minutes; so this will.          only print out even numbers less than or equal to 10. 
+-
+        time = 0.   
+        while time <= 10:   
+          print(time)  
+          time = time + 2. 
+
+     - Another example below shows two variables created
+            - with "While" loops, the variables are created separately!
+            - the last line doesn't need to be indented because the action occurs outside the loop.                   basically once it's finished the loop (got to 5 devices), the loop stops and performs the next.            action in line
+-
+      max_devices = 5
+      i = 1
+
+      while i < max_devices:  
+        print ("User can still connect to additional devices")  
+        i = i +1  
+      print ("User has reached maximum number of connected devices")  
+
+      
+
+      
