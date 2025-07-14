@@ -192,6 +192,20 @@ The above scenario shows that things will recall within the order they were inpu
           print(time)  
           time = time + 2. 
 
+- Below example will print in a list, everything from 5000 to 5150, but only divisible by 5
+
+        i = 5000
+        while i <= 5150:
+          print (i)
+          i = i + 5
+
+- Below will show a list of ip addresses in list form. but if print(ip_addresses) was there, would list all 6, 6 times. but when print(i) is used, it knows ip_addresses is a list
+
+        ip_addresses = ["192.168.142.245", "192.168.109.50"]
+
+        for i in ip_addresses:
+          print(i)
+
      - Another example below shows two variables created
             - with "While" loops, the variables are created separately!
             - the last line doesn't need to be indented because the action occurs outside the loop.                   basically once it's finished the loop (got to 5 devices), the loop stops and performs the next.            action in line
@@ -236,6 +250,15 @@ The above scenario shows that things will recall within the order they were inpu
           if asset == "desktop20":  
               break  
           print(asset)  
+
+    - when using "else", break must be at the end, in order for it to work. other wise won't print stuff after
+
+               for i in ip_addresses:
+	             if i in allow_list:
+		              print("IP address is allowed")
+	              else:
+		              print("IP address is not allowed")
+		              break
           
   ### Continue keyword
     - used to skip an iteration based on a certain condition in an if statement being true
