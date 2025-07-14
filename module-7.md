@@ -173,16 +173,19 @@ The above scenario shows that things will recall within the order they were inpu
 
   in above loop, it prints 0-4 because the second number is the end point (which is not included), and then the 3rd number.            determines the incremental change (in this case, it increases by an integer of 1)
 
-      ### While Loops
+### If the start point is anything other than 0 or the increment is anything other than 1, they should be specified.
+
+  ### While Loops
    
-    - repeatedly execute a function, but the repetition is based on a condition you create before. 
-    - "while" indicates the beginning, followed by the condition, that contains the loop variable,
+   - repeatedly execute a function, but the repetition is based on a condition you create before.
+   - "while" indicates the beginning, followed by the condition, that contains the loop variable,
              in this case "time"
              - so you assign the variable beforehand, and then reference in the loop. 
       
-    - so in the below statement, time = 0 is the variable, and then underneath is the condition using it
-      - in the indented body, it consists of the actions to take while the loop iterates
-      - so the first line prints the current variable (0), and then print every two minutes; so this will.          only print out even numbers less than or equal to 10. 
+  - so in the below statement, time = 0 is the variable, and then underneath is the condition using it
+    - in the indented body, it consists of the actions to take while the loop iterates
+    - so the first line prints the current variable (0), and then print every two minutes; so this will.
+      only print out even numbers less than or equal to 10. 
 -
         time = 0.   
         while time <= 10:   
@@ -201,6 +204,48 @@ The above scenario shows that things will recall within the order they were inpu
         i = i +1  
       print ("User has reached maximum number of connected devices")  
 
-      
+- in the BELOW scenario, the variable is created. it prints "Login attempts:", and then whatever the login_attempt is, and then continues to add 1 to each attempt. so will print:
+- Login attempts: 0   
+  Login attempts: 1  
+  Login attempts: 2   
+  Login attempts: 3   
+  Login attempts: 4   
 
+
+      login_attempts = 0
+      while login_attempts < 5:
+        print("Login attempts:", login_attempts)
+        login_attempts = login_attempts + 1
       
+- in the BELOW scenario, count is a variable to track login attempts, and changes long_status to false once it equals 4
+
+      count = 0
+      login_status = True
+      while login_status == True:
+        print("Try again.")
+        count = count + 1
+        if count == 4:
+          login_status = False
+
+  ### Break keyword
+    - used to break out (stop) a loop
+    - so below sequence will only print "laptop1" beacuse it breaks when it gets to desktop20
+-
+        computer_assets = ["laptop1", "desktop20", "smartphone03"]  
+        for asset in computer_assets:  
+          if asset == "desktop20":  
+              break  
+          print(asset)  
+          
+  ### Continue keyword
+    - used to skip an iteration based on a certain condition in an if statement being true
+   - below it will skip "desktop20", and just print laptop1 and smartphone03
+    
+-
+        computer_assets = ["laptop1", "desktop20", "smartphone03"]
+        for asset in computer_assets:
+          if asset == "desktop20":
+            continue
+        print(asset)
+
+    ### CTRL-C or CTRL-Z will exit an infinite loop!! Might need to be done when running a service that constantly processes data
