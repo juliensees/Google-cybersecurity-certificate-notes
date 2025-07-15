@@ -106,7 +106,8 @@ The above scenario shows that things will recall within the order they were inpu
       else:
         print("No Updates Needed")
 
-  - "elif" - precedes a condition that is only evaluated when previous conditions evaluate to False. Unlike with else, there             can be multiple elif statements following if.
+  - "elif" - precedes a condition that is only evaluated when previous conditions evaluate to False. Unlike with else, there can be multiple elif statements following if.
+ 	- "elif" is basically an alternative sequence if the prior thing is false. so you can do 	multiple "elif's", and then as in below, "else" ends with a print
 
 -
       if status == 200:  
@@ -134,8 +135,8 @@ The above scenario shows that things will recall within the order they were inpu
        if not(status >= 200 and status <= 226):  
          print("check status")
 
-        - in above statement, the "not" operator inverts whether conditions are met in order to print. so if both things are                 not met, then it will PRINT.
-        - MUST USE PARENTHESES AFTER "NOT", SO THAT BOTH ASPECTS ARE INCLUDED!
+        - in above statement, the "not" operator inverts whether conditions are met in order to print. so if both things are not met, then it will PRINT.
+        - ### MUST USE PARENTHESES AFTER "NOT", SO THAT BOTH ASPECTS ARE INCLUDED!
 
    - BELOW, uses the "in" operator, after creating a list:
       - the "in" operator tells python to run the loop for every item in the sequence.
@@ -175,12 +176,31 @@ The above scenario shows that things will recall within the order they were inpu
 
 ### If the start point is anything other than 0 or the increment is anything other than 1, they should be specified.
 
+- For the below loop:
+ 		- when print is indented, it runs normally and prints through the entire loop  
+   			- when it's not indented, it still runs, but only at the end. so it only   			prints "2", because it was the last number in the sequence (3 would not be   			printed)
+  		- also, notice that you're telling it to print the word "Inside:" and then the comma   		separates to include a secondary option, which in this case is saying print whatever.  		"i" currently is  
+
+		for i in range(3):
+    			print("Inside:", i)   # runs each time
+
+		print("Outside:", i)       # runs once, after the loop
+
+So:
+		Inside: 0  
+		Inside: 1  
+		Inside: 2  
+		Outside: 2  
+
+
+
   ### While Loops
    
    - repeatedly execute a function, but the repetition is based on a condition you create before.
    - "while" indicates the beginning, followed by the condition, that contains the loop variable,
              in this case "time"
-             - so you assign the variable beforehand, and then reference in the loop. 
+             - so you assign the variable beforehand, and then reference in the loop.
+     ### Unlike "for" loops, While loops must always designate what the loop should do, or else will run 	forever on the first line. So with the setup below, it will continue to print "0", without the 		time = time +2 code
       
   - so in the below statement, time = 0 is the variable, and then underneath is the condition using it
     - in the indented body, it consists of the actions to take while the loop iterates
