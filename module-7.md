@@ -321,3 +321,46 @@ So:
         				print(sum_variable)   # 2 indents — prints every iteration (inside loop)  
     				print("Done")             # 1 indent — inside function, but outside loop  
 
+	- Parameter - an object that is included in a function definition, to use within that function
+    		- the parameter goes inside (). so with greet_employee(name) , name is the parameter
+    		- the below code, shows two parameters (first_name and last_name)
+    
+    			def greet_employee(first_name, last_name):
+    				print("Welcome! You're logged in", first_name, last_name)
+    			greet_employee("Kiara", "Carter")
+    
+    	- Argument - the data brought into a function, when it is called
+       		- so, as in the below code, "bmoreno" is the argument. so when the function is called up, and 			used, the argument, is what's inside those parentheses
+
+	   				def display_username(username):
+						print("Username is", username)
+					display_username("bmoreno")
+
+	- Return statement - a paython statement that executes inside a function and sends information back to the 	function call, using the "return" keyword
+    		- lets you re-use a statement, unlike Print, which doesn't "Save" anything. this returns output 		(information) from a function
+    		- the BELOW code stores 0 (3-3), inside of remaining_attempts. since that function is completed, 		it goes to the next line, which retrieves what's inside the variable remaining_attempts (the 			returned value) and puts it into the conditional statement. It's true, so it prints "Your account 		is locked"
+ 
+    				def remaining_login_attempts(maximum_attempts, total_attempts):
+   					return maximum_attempts - total_attempts
+				remaining_attempts = remaining_login_attempts(3, 3)
+				if remaining_attempts <= 0:
+    					print("Your account is locked")
+
+    	- Global variable - used throughout the entire program and assigned outside a function definition
+       		- so, 	device_id = "7ad2130bd"
+         - Local variable - a variable assigned within a function, and only used inside
+           	- includes parameters as well as variables
+           	- below, "total_string" and "name" are local variables:
+          
+           	  		def greet_employee(name):
+					total_string = "Welcome" + name
+					return total_string
+
+	### it's best to avoid combining global and local variables within functions. Can cause confusion
+
+## Built-in functions
+	- print() and type()
+
+ 
+    
+
