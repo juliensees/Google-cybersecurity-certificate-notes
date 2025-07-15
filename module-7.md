@@ -13,8 +13,8 @@
 -#- hash symbol indicates a comment - the programmer is describing their intention behind the code
     - common practice to start with a comment
     
-  "# Print Hello Python"     ----- don't use quotes
-   print ("Hello Python!")
+ 	 	# Print Hello Python     
+   		print ("Hello Python!")
    
    - print () -- outputs a specified object to the screen. so the initial hash (#) comment says what you want to do with the code, and the code below signifies the code to do that.
       
@@ -55,28 +55,29 @@
        - EVERYTHING IS CASE SENSITIVE!
          - NEVER USE QUOTES for variable. Just parentheses
              
-       #Call a variable  
-       device_id = "mr5lkvi"
-       print (device_id)  
+       			#Call a variable  
+       			device_id = "mr5lkvi"
+       				print (device_id)
+ 
          - this prints the variable's value (a string of characters) that you've already created
 
      ## type ()   - used to find what type of data is inside a variable. (string, integer, list, etc.)
      
-    -   device_id = "mr5lkvi"  
-        data_type = type(device_id)  
-        print (device_type)  
-        <class 'str'>
+    -   		device_id = "mr5lkvi"  
+        		data_type = type(device_id)  
+        		print (device_type)  
+        		<class 'str'>
 
         - in above scenario, it would be 'str' for string
      
   ## type error - an error that results from using the wrong data type  
   - cannot combine a string with an integer
 
-  username = "nzhao"  
-old_username = username  
-username = "zhao2"  
-print("Previous username:", old_username)  
-print("Current username:", username)  
+  		username = "nzhao"  
+		old_username = username  
+		username = "zhao2"  
+			print("Previous username:", old_username)  
+			print("Current username:", username)  
 
 Previous username: nzhao  
 Current username: zhao2  
@@ -86,7 +87,7 @@ The above scenario shows that things will recall within the order they were inpu
 # Conditional and Iterative Statements 
 
   ## Conditional Statement
-      - a statement that evaluates code to determine if it meets a specified set of conditions
+- a statement that evaluates code to determine if it meets a specified set of conditions
   - "if" - starts a conditional statement and the first line of the header is always ENDED BY A COLON!!
   -
         if failed_attempts > 5:  
