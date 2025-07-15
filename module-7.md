@@ -159,6 +159,7 @@ The above scenario shows that things will recall within the order they were inpu
         - begin with "for" (signals the beginning of the loop)
         - header is with the "for" keyword, body
         - "i" is the loop variable, which controls the iterations of a loop
+          	- basically says to list each element (one at a time)
         - "in" is the operator; which tells python to run the loop for every item
         - must be a colon at the end of the header
 
@@ -293,3 +294,30 @@ So:
         print(asset)
 
     ### CTRL-C or CTRL-Z will exit an infinite loop!! Might need to be done when running a service that constantly processes data
+
+# Introduction to Functions
+
+- Function - a set of code that can be reused in a program
+ 		- Built-in functions - exist within python and can be called directly (like the print function)
+   		- user-defined functions - ones that programmers design for their specific needs
+
+  - "def" - placed before a function name to DEFINE a function
+ 	     
+	      		# Define a function
+   	   		def greet_employee():
+      				print("Welcome! You're logged in.")
+
+ 			# Call a function
+  			greet_employee()
+    
+    	-	Welcome! You're logged in.
+
+    - "+" operator can combine two strings together into larger lists or data
+   
+    - 			def list_to_string():          # no indentation — function definition  
+    				sum_variable = ""          # 1 indent — inside function  
+    				for i in ["a", "b", "c"]: # 1 indent — still inside function   
+        				sum_variable += i     # 2 indents — inside the loop  
+        				print(sum_variable)   # 2 indents — prints every iteration (inside loop)  
+    				print("Done")             # 1 indent — inside function, but outside loop  
+
