@@ -556,7 +556,7 @@ So:
       - remember, they're case sensitive
     
 			#Use the index string method. 
-			print("HELLO".index"E"))  
+			print("HELLO".index("E"))  
 			1
 
 ### Strings are immutable - they cannot be changed after it is created and assigned a value
