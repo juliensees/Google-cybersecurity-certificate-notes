@@ -65,7 +65,7 @@
      
     -   		device_id = "mr5lkvi"  
         		data_type = type(device_id)  
-        		print (device_type)  
+        		print (data_type)  
         		<class 'str'>
 
         - in above scenario, it would be 'str' for string
@@ -359,8 +359,183 @@ So:
 	### it's best to avoid combining global and local variables within functions. Can cause confusion
 
 ## Built-in functions
-	- print() and type()
 
+- print() and type()
+- max() - returns the largest numeric input passed int it. so below, 9 is the highest number
+- min() - returns the smallest number
+
+ 				# Explore max
+    				a = 3
+       				b = 9
+	  			c = 6
+     				print(max(a,b,c))
+	
+				9
+
+   - sorted() - sorts the components of a list, into alphabetical order (for strings), or in numerical order 		(for numbers)
+  ### One more important detail about the sorted() function is that it cannot take lists or strings that have elements of more than one data type. For example, you can’t use the list [1, 2, "hello"].
+
+     				# Use the sorted function
+				usernames = ["elarson", "bmoreno", "tshah"]
+   				print(sorted(usernames))
+      
+      				bmoreno, elarson, tshah
+
+ - The below function shows that you can print the two separate lines, after you input the 3 arguments at the end of the code (calling the function) -- 'analyze_logins("ejones", 9, 3)' is calling the function
+    
+		# Define a function named `analyze_logins()` that takes in three parameters, 					`username`, `current_day_logins`, and `average_day_logins`
+
+		def analyze_logins(username, current_day_logins, average_day_logins):
+
+  		# Display a message about how many login attempts the user has made that day
+
+    			print("Current day login total for", username, "is", current_day_logins)
+
+    		# Display a message about average number of login attempts the user has made that day
+
+    			print("Average logins per day for", username, "is", average_day_logins)
+
+		# Call `analyze_logins()`
+
+		analyze_logins("ejones", 9, 3)
+
+ 		Current day login total for ejones is 9
+		Average logins per day for ejones is 3
+
+   - The below function adds a second variable into this function, and then a 3rd print (or feedback msg)
+  
+      			# Define a function named `analyze_logins()` that takes in three parameters, 					`username`, `current_day_logins`, and `average_day_logins`
+
+			def analyze_logins(username, current_day_logins, average_day_logins):
+
+    			# Display a message about how many login attempts the user has made that day
+
+    				print("Current day login total for", username, "is", current_day_logins)
+
+    			# Display a message about average number of login attempts the user has made that day
+
+    				print("Average logins per day for", username, "is", average_day_logins)
+
+    			# Calculate the ratio of the logins made on the current day to the logins made on an 				average day, storing in a variable named `login_ratio`
+
+    				login_ratio = current_day_logins / average_day_logins
+
+    			# Display a message about the ratio print(username, "logged in", login_ratio, "times as 			much as they do on an average day.")
+
+			# Call `analyze_logins()`
+
+			analyze_logins("moreno", 2, 3)
+
+			Current day login total for moreno is 2
+			Average logins per day for moreno is 3
+			moreno logged in 0.6666666666666666 times as much as they do on an average day.
+
+# Modules
+
+- a python file that contains additional functions, variables, classes, and any kind of runnable code
+  - re module - used for searching for patterns in log files
+  - csv module - used for working with csv files
+  - glob & os modules - interact with the command line
+  - time & datetime - working with timestamps
+     
+ ## Python Standard Library 
+ - an extensive collection of usable python code (including modules), that comes with Python
+
+  - external libraries can also be downloaded
+    	- beautiful soup - parses html website files
+    	- NumPy - for arrays and mathematical computations
+
+    ### Importing an entire module
+    - importing the statistics module
+
+    			import statistics
+				monthly_failed_attempts = [20, 17, 178, 33, 15, 21, 19, 29, 32, 15, 25, 19]
+				mean_failed_attempts = statistics.mean(monthly_failed_attempts)
+				print("mean:", mean_failed_attempts)
+
+    				mean: 35.25
+    
+   - 	Note: When importing an entire Python Standard Library module, you need to identify the name of the module with the function when you call it. You can do this by placing the module name followed by a period (.) before the function name. For example, the previous code blocks use statistics.mean() and statistics.median() to call those functions. 
+
+  - To import specific (but multiple in the below case), use the code below
+    	- when importing specific function from a module, you don't neeed to specify the name of entire module 		(like the code above), but only need to say the specific function you're using from the module - 		mean(monthly_failed_attempts), instead of statistics.mean(monthly_failed_attempts)
+
+    			from statistics import mean, median
+				monthly_failed_attempts = [20, 17, 178, 33, 15, 21, 19, 29, 32, 15, 25, 19]
+				mean_failed_attempts = mean(monthly_failed_attempts)
+				print("mean:", mean_failed_attempts)
+				median_failed_attempts = median(monthly_failed_attempts)
+				print("median:", median_failed_attempts)
+
+    - To import an external library in a Jupyter Notebook or Google Colab environment, you need to install them
+      	- first, run the following line for (numpy) - %pip install numpy , then just import numpy (like the python 		library)
+     
+### Code Readability
+- PEP Style Guide (Python Enhancement Proposals) - a resource that provides stylistic guidelines
+	- not mandatory, but help create consistency among programmers
+   	- keep all lines to 79 characters (including comments) to maintain readability
+    		- if you need more for a comment, start a second line, again with an #
+  	- another way to create a longer comment is to use three quotations """, at the beginning
+    	and end of the statement, still with less than 79 characters per line, but then you don't
+    	need a # at each line
+
+    ### In Python, you should indent the body of conditional statements, iterative statements, and function definitions.
+
+    -if you had a conditional statement inside of a while loop, the body of the loop would be indented four spaces and the body of the conditional would be indented four spaces beyond that. See below:
+  -
+  
+    					count = 0
+    					login_status = True
+    				 	while login_status == True:
+						   print("Try again.")
+						   count = count + 1
+						   if count == 4:
+							   login_status = False
+
+# Working with Strings
+
+## String Operations
  
+- len() - returns the number of elements in an object
+
+  		# Print the length of a string "Hello"
+  		print(len("Hello").
+  
+	 	5
+     
+- String concatenation - the process of joining two string together
+
+  		# Concatenate two strings 
+  		print("Hello" + "world")  
+	 
+	 	Helloworld
+
+- Method - a function that belongs to a certain data type
+  - unlike other functions, methods appear after the string.
+  - two common string methods are the upper and lower methods. Below is the upper method
+
+    		# Apply upper method to "Hello".
+    		print("Hello".upper())  
+
+    		HELLO
+
+## String Indices
+ - Index - a number assinged to every element in a sequence that indicates its position
+ - so, the index is the position of each character in a string
+   - placing an index in square brackets after a string returns the character at that index
+ - start counting indices from 0. So HELLO, is 0-4
+
+			"HELLO"[1]
+			E
+      
+   - Slice - uses a "start" and "stop" to specify a set of indeces, in order to extract a larger part
+
+			"HELLO"[1:4]
+  			ELL
+
+    - Index Method - used to search in a string 
+    	- .index()
+    	- finds the first occurrence of the input in a string and returns its location
     
 
+  
