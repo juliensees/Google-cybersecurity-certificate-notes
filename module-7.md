@@ -536,6 +536,13 @@ So:
     - Index Method - used to search in a string 
     	- .index()
     	- finds the first occurrence of the input in a string and returns its location
+       		- remember, they're case sensitive
     
+			#Use the index string method
+			print("HELLO".index"E"))
+			1
+
+### Strings are immutable - they cannot be changed after it is created and assigned a value
+
 
   
