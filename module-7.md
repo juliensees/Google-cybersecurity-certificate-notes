@@ -559,6 +559,13 @@ So:
 			print("HELLO".index("E"))  
 			1
 
+- below is similar to above, except that it's using a variable "ip_addresses" (so doesn't use quotes), and asking what to index (count) where the ip address starts
+
+   			ip_addresses = "192.168.140.81, 192.168.109.50, 192.168.243.140"
+			print(ip_addresses.index("192.168.243.140"))
+
+  			32
+
 ### Strings are immutable - they cannot be changed after it is created and assigned a value
 
 
