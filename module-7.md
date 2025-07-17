@@ -603,6 +603,13 @@ So:
       			print(my_list)   
 
  			[a, 7, c, d]
+
+			# Another example is below, but using words, so it's easier to see between the "2" & the name
+
+			username_list = ["elarson", "bmoreno", "tshah", "sgilmore"]
+			print("Before inserting an element:", username_list)
+			username_list.insert(2,"wjaffrey")
+			print("After inserting an element:", username_list)
 ```
 
 ## Inserting and Removing Elements in Lists
@@ -641,7 +648,6 @@ So:
 
 	- the second algorithm uses the .append() method to add input to the end of a list
 
-### 1
 ```
 address = "198.223.xx.xx"
 
@@ -650,7 +656,7 @@ print(address[0:3])
 
 198
 ```
-### 2
+
   - below shows that "for" starts the loop, "address" as the variable inside the for loop, and the list IP as the iterable
   - the first line, creates an empty list, named networks
 ``` 
@@ -664,4 +670,25 @@ for address in IP:
 
  ['198', '198', '180', '192', '184']
  ```
-    
+### Below is code that shows how to index an item in one list, and then use that number to retrieve something with the same index. So once finding the index of "sgilmore" and putting it into the "ind" variable, you can then recall that output of "2" to retrieve the index of 2 in the "approved_devices" list
+```
+# Assign `approved_users` to a list of approved usernames
+
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+
+username = "sgilmore"
+
+# Assign `ind` to the index of `username` in `approved_users`
+
+ind = approved_users.index(username)
+
+# Display the device ID at the index that matches the value of `ind` in `approved_devices`
+
+print(approved_devices[ind])
+```   
