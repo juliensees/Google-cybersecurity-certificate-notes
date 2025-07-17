@@ -593,3 +593,75 @@ So:
 
 			print(url[8:ind])
 
+## Lists and Algorithms
+ ### Replacing an element in a list
+ 	- just add the brackets
+```
+			# Change a specific element in a list
+  			my_list = ["a", "b", "c", "d"]
+    			my_list[1] = 7
+      			print(my_list)   
+
+ 			[a, 7, c, d]
+```
+
+## Inserting and Removing Elements in Lists
+-
+ ### Insert Element
+- The method below takes two arguments: the first is the position we're adding the element to, and the second is the element we want to add. 
+  - You can see that while above, something is replaced in a list, with insert, it shifts everything down
+
+ 	```
+			# Use the insert method
+			my_list = ["a", "b", "c", "d"]
+			my_list.insert(1, 7)
+			print(my_list)
+
+			# Output:
+			['a', 7, 'b', 'c', 'd']
+	```
+
+### Remove Element
+ - The removed method removes the first occurrence of a specific element in the list. Unlike insert, the argument of removed is not an index value. 		Instead, you directly type the element you want to remove.
+
+```
+ 			# Use the remove method
+			my_list = ["a", "b", "c", "d"]
+   			my_list.remove("d")
+      			print(my_list)
+
+  			[a, b, c, e]
+```
+## Writing an algorithm
+- a set of rules/steps that solve a problems or tasks
+
+    - Below has two tasks
+      1) using string slicing to extract the first 3 digits from one IP address
+      2) uses a loop to apply that solution to every IP address on the list
+
+	- the second algorithm uses the .append() method to add input to the end of a list
+
+### 1
+```
+address = "198.223.xx.xx"
+
+# Extract the first three characters of an IP address
+print(address[0:3])
+
+198
+```
+### 2
+  - below shows that "for" starts the loop, "address" as the variable inside the for loop, and the list IP as the iterable
+  - the first line, creates an empty list, named networks
+``` 
+IP = ["198.223.XX.XX", "198.101.XX.XX", "180.064.XX.XX", "192.168.XX.XX", "184.090.XX.XX"]
+
+# Extract the first three characters from a list of IP addresses
+networks = []
+for address in IP: 
+	networks.append(address[0:3])
+ print(networks)
+
+ ['198', '198', '180', '192', '184']
+ ```
+    
