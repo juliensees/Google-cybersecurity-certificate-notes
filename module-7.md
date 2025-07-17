@@ -691,4 +691,40 @@ ind = approved_users.index(username)
 # Display the device ID at the index that matches the value of `ind` in `approved_devices`
 
 print(approved_devices[ind])
-```   
+```
+### Below code is used to develop a function that uses a conditional inside of another conditional statement to automate the login process. 
+- The outer conditional handles the case when the username is approved and the case when username is not approved. The inner conditional, which is placed inside the first if statement, handles the case when the username is approved and the device_id is correct, as well as the case when the username is approved and the device_id is incorrect. 
+
+```
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Define a function named `login` that takes in two parameters, `username` and `device_id`
+
+def login(username, device_id):
+    if username in approved_users:
+
+        # then display "The user ______ is approved to access the system.",
+
+        print("The user", username, "is approved to access the system.")
+
+        # assign `ind` to the index of `username` in `approved_users`,
+
+        ind = approved_users.index(username)
+
+        # and execute the following conditional
+        # If `device_id` matches the element at the index `ind` in `approved_devices`,
+
+        if device_id == approved_devices[ind]:
+          print(device_id, "is the assigned device for", username)
+        else:
+          print(device_id, "is not their assigned device.")
+
+    else:
+        print("The username", username, "is not approved to access the system.")
+
+login("bmoreno", "hl0s5o1")
+
+The user bmoreno is approved to access the system.
+hl0s5o1 is the assigned device for bmoreno
+```
