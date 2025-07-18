@@ -777,7 +777,8 @@ re.findall("\w", "h32rb17")
 ['h', '3', '2', 'r', 'b', '1', '7']
 ```
 
-	The below example shows how you can extract just the username and login attempts from users. It disregards the employee ID number in the search because w+: will only bring any number of characters that ends with a colon. And because of the space between the ID number and the username, it's not connected. The \s includes the space after the colon, and the d+ is specific to numbers.
+-The below example shows how you can extract just the username and login attempts from users. It disregards the employee ID number in the search because w+: will only bring any number of characters that ends with a colon. And because of the space between the ID number and the username, it's not connected. The \s includes the space after the colon, and the d+ is specific to numbers.
+ 
 ```
 import re
 pattern = "\w+:\s\d+"
