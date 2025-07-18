@@ -728,3 +728,61 @@ login("bmoreno", "hl0s5o1")
 The user bmoreno is approved to access the system.
 hl0s5o1 is the assigned device for bmoreno
 ```
+## Regular Expressions
+- regular expressions (regex) - a sequence of characters that forms a pattern
+  - this pattern can then be used to search within log files, find all strings that start with a prefix, or length
+    ### Use "import re" to import the "re" module, each time you start a new python session
+  - "+" - regular expression symbol that represents one or more occurrences of a specific character
+    - "a+" matches - to any string that has "a" within it
+    - "\w" - matches with any singular alphanumeric character, ### NO SYMBOLS! except the underscore "_" works as well
+    - "\w+" - will match with multiple characters
+    - "." - matches to all characters, including symbols
+    - "\d" - matches to all single digits [0-9]
+    - "\s" - matches to all single spaces
+    - "\." - matches to the period character
+    - "*" - represents zero, one, or more occurrences of a specific character
+    - "{2}" - instructs python to return all matches of exactly two single digits in a row (or whatever # is inside)
+      	- You can also specify a range within the curly brackets by separating two numbers with a comma. The first number is the minimum number of repetitions and the second number is the maximum number of repetitions. The following example returns all matches that have between one and three repetitions of a single digit:
+      	  
+```
+import re
+re.findall("\d{1,3}", "h32rb17 k825t0m c2994eh")
+
+['32', '17', '825', '0', '299', '4']
+```
+- So "b\wa+b" could match with "bkaaab" because:
+      	  	- it must start with "b"
+      	  	- "\w" means that anything can come after "b"
+      	  	- "a+" means a must come next
+      	  	- "b" means it must end with "b"
+
+  - Another example: user1@email1.com
+    		   - \w+ @ \w+ \. \w+
+      	  	- "\w+" is used to collect any characters until...
+      	  	- "@" is used to show that after an undetermined amount of characters, an "@" must be present
+      	  	- "\w+" is again present for "email1" or any type of e-mail client
+      	  	- "\." is used for the period because with the "\", it would be considered an operator
+      	  	- "\w+" is used for the ".com" or whatever ending is there
+      	  		### So basically it would return any e-mails
+
+	- re.findall() - returns a list of matches to a regular expression
+  		- the first parameter is a regular expression pattern to search for, the 2nd parameter is the string 		it will search through
+    		- so you could use: print(re.findall("\w+@\w+\.\w+", email_log)) to find all e-mails within the 			email_log
+
+- the below code uses the basic \w to search, and you can see, each character is returned separately
+```
+import re
+re.findall("\w", "h32rb17")
+
+['h', '3', '2', 'r', 'b', '1', '7']
+```
+
+	The below example shows how you can extract just the username and login attempts from users. It disregards the employee ID number in the search because w+: will only bring any number of characters that ends with a colon. And because of the space between the ID number and the username, it's not connected. The \s includes the space after the colon, and the d+ is specific to numbers.
+```
+import re
+pattern = "\w+:\s\d+"
+employee_logins_string = "1001 bmoreno: 12 Marketing 1002 tshah: 7 Human Resources 1003 sgilmore: 5 Finance"
+print(re.findall(pattern, employee_logins_string))
+
+'bmoreno: 12', 'tshah: 7', 'sgilmore: 5']
+```
