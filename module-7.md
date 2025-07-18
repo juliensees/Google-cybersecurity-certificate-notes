@@ -756,18 +756,18 @@ re.findall("\d{1,3}", "h32rb17 k825t0m c2994eh")
       	  	- "a+" means a must come next
       	  	- "b" means it must end with "b"
 
-  - Another example: user1@email1.com
-    		   - \w+ @ \w+ \. \w+
-      	  	- "\w+" is used to collect any characters until...
-      	  	- "@" is used to show that after an undetermined amount of characters, an "@" must be present
-      	  	- "\w+" is again present for "email1" or any type of e-mail client
-      	  	- "\." is used for the period because with the "\", it would be considered an operator
-      	  	- "\w+" is used for the ".com" or whatever ending is there
-      	  		### So basically it would return any e-mails
+  - Another example: user1@email1.com  
+    		   - \w+ @ \w+ \. \w+  
+      	  	- "\w+" is used to collect any characters until...  
+      	  	- "@" is used to show that after an undetermined amount of characters, an "@" must be present.   
+      	  	- "\w+" is again present for "email1" or any type of e-mail client. 
+      	  	- "\." is used for the period because with the "\", it would be considered an operator    
+      	  	- "\w+" is used for the ".com" or whatever ending is there. 
+      	  		### So basically it would return any e-mails  
 
-	- re.findall() - returns a list of matches to a regular expression
-  		- the first parameter is a regular expression pattern to search for, the 2nd parameter is the string 		it will search through
-    		- so you could use: print(re.findall("\w+@\w+\.\w+", email_log)) to find all e-mails within the 			email_log
+	- re.findall() - returns a list of matches to a regular expression  
+  		- the first parameter is a regular expression pattern to search for, the 2nd parameter is the string   		it will search through  
+    		- so you could use: print(re.findall("\w+@\w+\.\w+", email_log)) to find all e-mails within the   			email_log  
 
 - the below code uses the basic \w to search, and you can see, each character is returned separately
 ```
