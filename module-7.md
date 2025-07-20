@@ -824,3 +824,143 @@ The IP address 192.168.148.115 does not require further analysis.
 The IP address 192.168.103.106 does not require further analysis.
 The IP address 192.168.168.144 has been flagged for further analysis.
 ```
+
+## Python for automation
+- Python can be used to automate security tasks in CI/CD Pipeline (Continuous Delivery/Deployment)
+  	- SAST - Static Application Security Testing: scripts can be written to start SAST tools that look at your 	code for weaknesses before it gets built. Python can also be used to understand the SAST results, create 	reports, and automatically stop the process if serious security problems are found.
+  	- DAST - Dynamic Application Security Testing: Python can be used to automatically run DAST tools to test 	software while it’s running in a test area. Then, Python scripts can look at the DAST results and give 		feedback in the CI/CD pipeline.
+  	- SCA - Software Composition Analysis: Python can work with SCA tools to check your software’s 			dependencies for weaknesses. Dependencies are things like open source code and components from other 		companies. Scripts can control the SCA process, report problems, and set rules based on the severity of 	weaknesses.
+ 
+- Automated Vulnerability Scanning Python scripts can organize vulnerability scans of things like container images, infrastructure settings, and the CI/CD pipeline itself. You can use Python to schedule these scans, collect the results, and send alerts when new vulnerabilities are discovered.
+Compliance Checks 
+
+- Python scripts can automatically check for compliance. For example, scripts can check if code follows secure coding rules or if infrastructure settings meet security guidelines. You can then use Python to make reports about compliance and ensure security standards are followed.
+Secrets Management Automation 
+
+- Python is key for automating secure secrets management. Scripts can be used to review through code and stop private credentials from being directly written in the code. Also, Python scripts can work with secret management tools (like HashiCorp Vault) to safely get and put secrets into applications during automated releases.
+Policy Enforcement 
+
+- "Policy as Code" and Python scripts work together to automatically enforce security policies. Python can be used to define and understand security policies. Then, scripts can check pipeline steps against these policies. If policies are broken (for example, if too many vulnerabilities are found), Python can automatically stop releases.
+
+## Work with Files within Python
+- with open(...) as file: - should be thought of as opening a file, and then will automatically "close" the file
+	- "with" - handles errors and manages external resources
+ 	- "open()" - opens a file in python
+  	- ".read" - converts files into strings
+   	- "a" - used to append
+    	- "w" - used to write new file, or OVERWRITE existing file
+     		- With both "w" and "a", you can use the .write() method.
+   ### "w" - write - can only be done with strings! so you must convert a list back into a string before writing
+- below file is a variable that contains the file information as long as we're inside the with statement.
+- similar to a loop, with statements start an indent on the next line. This tells Python that this code is happening inside the with statement
+- "file_text = file.read()" - uses the read() function to turn the file into a string and store that inside a new variable, called "file_text". 
+```
+#Open a text file
+with open("login_attempts.txt", "r") as file:
+	file_text = file.read()
+print(file_text)
+
+elarson
+errab
+bmoreno
+```
+
+### Parse a text file
+- Parsing - the process of converting data into a more readable format
+-".split()" - converts a string into a list, based on spacing
+- you use: print(file_text.split())
+	"We are learning about parsing!" --- ["We", "are", "learning", "about", "parsing!"]
+ - ALSO, after printing, you can create the split into a new file by creating a new variable:
+   	- usernames = file_text.split()
+### If you do not pass an argument into .split(), it will separate the string every time it encounters a whitespace.
+- below uses (",") argument to use a comma to parse it into a list, since there are no spaces to do it automatically
+```
+approved_users = "elarson,bmoreno,tshah,sgilmore,eraab"
+print("before .split():", approved_users)
+approved_users = approved_users.split(",")
+print("after .split():", approved_users)
+```
+### Why are things copied to the memory of the computer and not the HD
+1. Speed
+    RAM (Random Access Memory) is much faster than disk storage (HD or SSD).
+    Reading and manipulating data in RAM is nearly instantaneous compared to reading/writing files on disk.
+    So Python reads a file into RAM to allow fast operations (like .split(), slicing, etc.).
+2. Safety
+    Automatically saving to disk could accidentally overwrite data.
+    Working in RAM allows you to process or test things without affecting your actual files.
+    It gives you the choice to save the result only if and when you're ready.
+3. Temporary Use
+    Often you only need the data once — to count words, extract values, or parse something.
+    There's no need to save the processed version unless you explicitly want to preserve it.
+    So memory is the logical place to hold it temporarily while your program runs.
+### Things will be stored in RAM until python is closed 
+- below shows how after you've used "with" to open and copy the file into a read format in the updates variable, that the next line is not indented. not indenting it, closes the "with" command/closes the original file. so the split is done on the copy that exists in memory. but by closing the file, it frees up resources within the computer. so it's good practice to close things asap to save energy/memory space
+```
+with open("update_log.txt", "r") as file:
+    updates = file.read()
+updates = updates.split()
+```
+- .join() - converts a list into a string, using a separator that you provide
+  	- BELOW USE THE QUOTES!
+  	- ",".join(approved)_users or "|".join(approved_users) or " ".join(approved_users)  
+  	- "\n.join(approved)users -- will separate by placing on separate lines  
+- Below takes the updates variable and turns it back into a string separated by spaces, and then writes it to the original file
+```
+updates = " ".join(updates)
+with open("update_log.txt", "w") as file:
+    file.write(updates)
+```
+- Below appends the original import file by directly adding the missing_entry file to the end
+### Also, as seen below, after writing a file, you must re-open in "read" mode, in order to print/read it
+```
+# Assign `import_file` to the name of the text file that contains the security log file
+import_file = "login.txt"
+
+# Assign `missing entry` to a log that was not recorded in the log file
+missing_entry = "jrafael,192.168.243.140,4:56:27,2022-05-09"
+
+# Use `open()` to import security log file and store it as a string
+# Pass in "a" as the second parameter to indicate that the file is being opened for appending purposes
+with open(import_file, "a") as file:
+    # Use `.write()` to append `missing_entry` to the log file
+
+    updates = file.write(missing_entry)
+
+# Use `open()` with the parameter "r" to open the security log file for reading purposes
+with open(import_file, "r") as file:
+
+    # Use `.read()` to read in the contents of the log file and store in a variable named `text`
+    text = file.read()
+
+# Display the contents of `text`
+print(text)
+
+username,ip_address,time,date
+tshah,192.168.92.147,15:26:08,2022-05-10
+dtanaka,192.168.98.221,9:45:18,2022-05-09
+jrafael,192.168.243.140,4:56:27,2022-05-09
+```
+```
+#Open, read, and split a text file
+with open("login_attempts.txt", "r") as file:
+	file_text = file.read()
+ usernames = file_text.split()
+#create a function that counts a user's login attempts
+ def login_check(login_list, current_user):
+# You initialize a counter
+ 	counter = 0
+# You loop through each item
+  	for i in login_list:
+# Check each item
+   		if i == current_user:
+# Increase the counter each time
+     			counter = counter + 1
+# After the loop is done, you check if that user tried logging in 3 or more times.
+	if counter >= 3:
+ 		return "You failed"
+   	else:
+    		return "You succeed"
+
+login_check(usernames, "eraab")
+"You succeed
+```
