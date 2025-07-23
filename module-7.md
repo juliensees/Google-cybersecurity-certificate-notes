@@ -1013,3 +1013,26 @@ with open("allow_list.txt", "r") as file:
 # Display the contents of `text`
 print(text)
 ```
+## Debug Python Code
+### Errors
+	- Syntax errors - involve invalid usage of the python language (forgetting to add a colon)
+ 			- misspelling the python keyword elif by typing elsif
+    			- EOL - End of Line
+ 	- Logic errors - instances when code is written incorrectly in terms of what you want it to do
+  			- so it may not cause error messages to be produced, but instead make unintended results
+     				- ex. a less than sign (<) , when it should have been less than or equal to (<=)
+	 	* in order to diagnose
+   			- 1) should use print statements to identify which sections of the code are working properly
+      			- 2) use a debugger - which inserts breakpoints in the code, into sections and run just one 			portion of the code at a time.
+	 - An Exception - happen when the program doesn't know how to execute code even though there are no problems 			with the syntax.
+  			- ex.   - when something is mathematically impossible (divide by 0)
+    				- when you ask python to access index values that don't exist 
+       				- when python doesn't recognize variable or function mames
+	  			- when you use an incorrect data type
+      			- can also use a debugger to find out the issue
+	 
+      			- "IndexError" - when you place an index in bracket notation that does not exist in the 			sequence referenced. 
+	 		usernames = ["bmoreno", "tshah"], print(usernames[3].... but 3 doesn't exist
+      			- "TypeError" - results from using the wrong data type. Using a string value in math equation
+	 		- "FileNotFound" - occurs when  you try to open a file that doesn't exist in that location
+	 
