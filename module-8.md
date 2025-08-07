@@ -55,3 +55,36 @@
 
 ### Data protection officers (DP0's)
  - are responsible for monitoring the internal compliance of an organization’s data protection procedures. These individuals advise the security team on the obligations required by the organization's data protection standards and procedures. They also conduct assessments to determine whether or not the security measures in place are properly protecting the data as necessary. DPOs are notified when set standards or protocols have been violated.  
+
+## Stakeholders
+- an individual or group that has an interest in the decisions or activities of an organization
+- 
+ - Risk Managers - help identify risks and manage responses to security incidents
+          - notify the legal department regarding regulatory issues
+          - inform the organizatoin's public relations team
+ - Chief Executive Officer (CEO) - responsible for financial and managerial decisions
+          - report to shareholders and manage the operations of a company
+ - Chief Financial Officer (CFO) - senior executive responsible for managing financial operations
+          - concerned about security from a financial standpoint
+          - interested in the costs associated with tools/strategies necessary to combat security incidents
+ - Chief information Security Officer (CISO) - high level executives responsible for developing seucirty architecture                 and conduting risk analysis and system audits, and creating security and business continuity plans
+ - Operations Manager - oversee security professionals to help identify and safeguard an organization
+          - often work directly with analysts as first line of defense
+          - generally responsible for the daily maintenance of security operations
+
+### Creating security communications
+- typically have a beginning, middle, and end. describe the conflict and an eventual resolution
+      - the security story details what the security challenge is, how it iimpacts the organization, and possible             solutions
+      - also includes data related to the challenege, it's impact and proposed solutions
+          - can be in the form of reports that summarize findings or a list of issues that need attention
+
+ ### If your message is straightforward, an instant message or phone call might be the route to take. If you have to describe a complex situation with multiple layers, an email or in-person meeting might be the better option. If you’re providing a lot of data and numbers, sharing a graph might be the best solution. Each situation helps you determine the best means of communication. 
+
+## AI Usage
+Task - what do you want the model to do 
+    - Persona - what expertise the response should sound like (professional writer) or a specific audience
+    - Format - how you want the output to appear. bullet list, graph, etc
+Context - necessary details to refine the output
+References - could help refine the output by giving past examples
+Evaluate - just evaluating the first output
+Iterate - trying again by editing the prompt for a different/better output
